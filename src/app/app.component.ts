@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { PrimeNGConfig } from 'primeng/api';
-import { RippleModule } from 'primeng/ripple';
 
 
 @Component({
