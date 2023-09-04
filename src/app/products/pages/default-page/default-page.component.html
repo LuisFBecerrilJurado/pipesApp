@@ -1,1 +1,130 @@
-<p>default-page works!</p>
+<div class="defaultPage py-2 fadeinright animation-duration-1000 animation-iteration-1">
+  <div>
+    <p-card header="¿Que son los Pipes?" class="text-center">
+      <p class=" flex  align-items-center justify-content font-bold text-white text-xl text-justify">
+        Los pipes son una de las utilidades que nos ofrece Angular para realizar transformaciones de los datos, a la hora de mostrarlos en los templates de los componentes. Son muy útiles en inmensas situaciones y usarlos es muy sencillo, solamente se tiene que usar el simbolo " | " <br>
+        Existen pipes o tuberias que nos ayudan a dar formato a:
+      </p>
+    </p-card>
+  </div>
+
+  <div class="grid py-2 ">
+    <div class="col-12 md:col-4 ">
+      <a href="/basics" class="no-underline">
+        <p-card header="Texto" class="text-center">
+          <div class="text-justify text-base font-bold">
+            <p>
+              Si recibimos un texto (string) lo podemos transformar al formato que mejor se ajuste a nuestras necesidades
+            </p>
+            Por ejemplo:
+            <div class="grid text-center mt-3">
+              <div class="col-4"> Texto Entrada
+                <p>hOlA</p>
+              </div>
+              <div class="col-4"> Pipe
+                <p>
+                  | uppercase
+                </p>
+              </div>
+              <div class="col-4"> Texto Salida
+                <p>
+                  HOLA
+                </p>
+              </div>
+            </div>
+            <p class="text-center underline">
+              Ver Más
+            </p>
+          </div>
+        </p-card>
+      </a>
+    </div>
+    <div class="col-12 md:col-4">
+      <a href="/dates" class="no-underline">
+        <p-card header="Fechas" class="text-center">
+          <div class="text-justify text-base font-bold">
+            <p>
+              Recibimos un número, string cualquiera y podemos darle formato de fecha
+            </p>
+            Por ejemplo:
+            <div class="grid text-center mt-3">
+              <div class="col-4"> Texto Entrada
+                <p>61515</p>
+              </div>
+              <div class="col-4"> Pipe
+                <p>
+                  | date: 'M/d/yy'
+                </p>
+              </div>
+              <div class="col-4"> Texto Salida
+                <p>
+                  6/15/15
+                </p>
+              </div>
+            </div>
+            <p class="text-center underline">
+              Ver Más
+            </p>
+          </div>
+        </p-card>
+      </a>
+    </div>
+    <div class="col-12 md:col-4">
+      <a href="/numbers" class="no-underline">
+        <p-card header="Números" class="text-center">
+          <div class="text-justify text-base font-bold">
+            <p>
+              Recibimos un numero cualquiera y podemos darle formato con separacion de miles
+            </p>
+            Por ejemplo:
+            <div class="grid text-center mt-3">
+              <div class="col-4"> Texto Entrada
+                <p>123456</p>
+              </div>
+              <div class="col-4"> Pipe
+                <p>
+                  | number
+                </p>
+              </div>
+              <div class="col-4"> Texto Salida
+                <p>
+                  123,456
+                </p>
+              </div>
+            </div>
+            <p class="text-center underline">
+              Ver Más
+            </p>
+          </div>
+        </p-card>
+      </a>
+    </div>
+    <div class="col-12 md:col-4 md:col-offset-1">
+      <a href="/uncommon" class="no-underline">
+        <p-card header="JSON" class="text-center">
+          <div class="text-justify text-base font-bold">
+            <p>
+              Es especialmente útil cuando queremos mostrar objetos JSON en el navegador
+            </p>
+            <p class="text-center underline">
+              Ver Más
+            </p>
+          </div>
+        </p-card>
+      </a>
+    </div>
+    <div class="col-12 md:col-4 md:col-offset-1">
+      <a href="/custom" class="no-underline">
+        <p-card header="Personalizados" class="text-center">
+          <div class="text-justify text-base font-bold">
+            <p>
+              Podemos crear nuestros propios pipes para realizar una tarea más especifica
+            </p>
+            <p class="text-center underline">
+              Ver Más
+            </p>
+          </div>
+        </p-card>
+      </a>
+    </div>
+</div>
