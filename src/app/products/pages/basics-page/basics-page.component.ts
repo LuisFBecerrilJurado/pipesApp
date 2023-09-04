@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./basics-page.component.css']
 })
 export class BasicsPageComponent {
+  public nameLower: string = 'luis';
+  public nameUpper: string = 'luis';
+  public fullName: string = 'LuIs FRancISco BEcErRIl JuRADo';
 
+  
 }
