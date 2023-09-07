@@ -28,7 +28,7 @@ export class MenuComponent implements OnInit {
           },
           {
             label: 'Números',
-            icon: 'pi pi-dollar',
+            icon: 'fa-solid fa-hashtag',
             routerLink: 'numbers'
           },
           {
@@ -40,7 +40,7 @@ export class MenuComponent implements OnInit {
       },
       {
         label: 'Personalizados',
-        icon: 'pi pi-globe',
+        icon: 'fa-solid fa-pencil',
         items: [
           {
             label: 'JSON',

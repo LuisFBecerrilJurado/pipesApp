@@ -1,37 +1,148 @@
 <div class="text-3xl py-3">
-  <p-card header="Pipes Básicos" class="text-center">
+  <p-card header="Text Pipes" class="text-center">
     <p class="text-justify text-xl">
       Pipes incluidos en Angular por default que nos sirven para transformar una cadena de caracteres (string). <br>
-      A un formato que se ajuste a nuestras necesidades, además cada pipe contiene varias opciones para que el resultado obtenido se ajuste a un más a nuestros requerimientos entre los más utilizados se encuentran
+      A un formato que se ajuste a nuestras necesidades, además cada pipe contiene varias opciones para que el resultado
+      obtenido se ajuste a un más a nuestros requerimientos entre los más utilizados se encuentran
     </p>
   </p-card>
 </div>
 
 <div class="grid">
-  <div class="col-12">
-    <p-card header="UpperCase">
-      <div class="grid">
-        <p>
-          Convierte un texto recibido a todo en minúsculas
-          <strong>Entrada</strong>
-        </p>
-        <div class="col-6">
-          1
-        </div>
-        <div class="col-6">
-          2
+  <p-accordion [activeIndex]="0">
+    <p-accordionTab header="LowerCase" class="text-3xl">
+      <div class="col-12 text-base">
+        <div class="grid">
+          <div class="col-12">
+            <p-divider>
+              <strong class="text-xl">Descripción</strong>
+            </p-divider>
+            <p>
+              Convierte un texto recibido a todo en minúsculas
+            </p>
+            <p-divider>
+              <strong class="text-xl">Estructura</strong>
+            </p-divider>
+            <p class="text-xl text-center">
+             {{ lowerCase }}
+            </p>
+            <p-divider>
+              <strong class="text-xl">Ejemplo</strong>
+            </p-divider>
+          </div>
+          <div class="col-5">
+            <p-divider>
+              <strong class="text-xl">Entrada</strong>
+            </p-divider>
+            <p class="text-justify">
+              Lorem, iPSUm dolor sit AMET cOnseCTetuR adipisicing ELIt. QuaS rEPEllendus AUT perspiciatis blanditiis
+              labore animi ducimus accusantium porro placeat quia optio, totAM dOlOr SapIeNTe nesciunt similique VEro.
+              DolorIbuS, expliCabO EA?
+            </p>
+          </div>
+          <p-divider layout="vertical"></p-divider>
+          <div class="col-5">
+            <p-divider>
+              <strong class="text-xl">Salida</strong>
+            </p-divider>
+            <p class="text-justify">
+              {{"Lorem, iPSUm dolor sit AMET consectetur adipisicing elit. Quas repellendus aut perspiciatis blanditiis
+              labore animi ducimus accusantium porro placeat quia optio, totam dolor sapiente nesciunt similique vero.
+              Doloribus, explicabo ea?" | lowercase}}
+            </p>
+          </div>
         </div>
       </div>
-    </p-card>
-  </div>
-  <div class="col-12">
-    <p-card header="LowerCase">
-      {{ nameLower | lowercase }}
-    </p-card>
-  </div>
-  <div class="col-12">
-    <p-card header="TitleCase">
-      {{ fullName | titlecase }}
-    </p-card>
-  </div>
+    </p-accordionTab>
+    <p-accordionTab header="UpperCase" class="text-3xl">
+      <div class="col-12 text-base">
+        <div class="grid">
+          <div class="col-12">
+            <p-divider>
+              <strong class="text-xl">Descripción</strong>
+            </p-divider>
+            <p>
+              Convierte un texto recibido a todo en mayúsculas
+            </p>
+            <p-divider>
+              <strong class="text-xl">Estructura</strong>
+            </p-divider>
+            <p class="text-xl text-center">
+              {{upperCase}}
+            </p>
+            <p-divider>
+              <strong class="text-xl">Ejemplo</strong>
+            </p-divider>
+          </div>
+          <div class="col-5">
+            <p-divider>
+              <strong class="text-xl">Entrada</strong>
+            </p-divider>
+            <p class="text-justify">
+              Lorem, iPSUm dolor sit AMET cOnseCTetuR adipisicing ELIt. QuaS rEPEllendus AUT perspiciatis blanditiis
+              labore animi ducimus accusantium porro placeat quia optio, totAM dOlOr SapIeNTe nesciunt similique VEro.
+              DolorIbuS, expliCabO EA?
+            </p>
+          </div>
+          <p-divider layout="vertical"></p-divider>
+          <div class="col-5">
+            <p-divider>
+              <strong class="text-xl">Salida</strong>
+            </p-divider>
+            <p class="text-justify">
+              {{"Lorem, iPSUm dolor sit AMET consectetur adipisicing elit. Quas repellendus aut perspiciatis blanditiis
+              labore animi ducimus accusantium porro placeat quia optio, totam dolor sapiente nesciunt similique vero.
+              Doloribus, explicabo ea?" | uppercase }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </p-accordionTab>
+    <p-accordionTab header="TitleCase" class="text-3xl">
+      <div class="col-12 text-base">
+        <div class="grid">
+          <div class="col-12">
+            <p-divider>
+              <strong class="text-xl">Descripción</strong>
+            </p-divider>
+            <p>
+              Convierte un texto recibido y pone en mayúscula la primera letra de cada palabra y transforma el resto en
+              minúsculas. Las palabras se delimitan con cualquier carácter de espacio en blanco, como un espacio, un
+              tabulador o un carácter de salto de línea.
+            </p>
+            <p-divider>
+              <strong class="text-xl">Estructura</strong>
+            </p-divider>
+            <p class="text-xl text-center">
+              {{ titleCase }}
+            </p>
+            <p-divider>
+              <strong class="text-xl">Ejemplo</strong>
+            </p-divider>
+          </div>
+          <div class="col-5">
+            <p-divider>
+              <strong class="text-xl">Entrada</strong>
+            </p-divider>
+            <p class="text-justify">
+              Lorem, iPSUm dolor sit AMET cOnseCTetuR adipisicing ELIt. QuaS rEPEllendus AUT perspiciatis blanditiis
+              labore animi ducimus accusantium porro placeat quia optio, totAM dOlOr SapIeNTe nesciunt similique VEro.
+              DolorIbuS, expliCabO EA?
+            </p>
+          </div>
+          <p-divider layout="vertical"></p-divider>
+          <div class="col-5">
+            <p-divider>
+              <strong class="text-xl">Salida</strong>
+            </p-divider>
+            <p class="text-justify">
+              {{"Lorem, iPSUm dolor sit AMET consectetur adipisicing elit. Quas repellendus aut perspiciatis blanditiis
+              labore animi ducimus accusantium porro placeat quia optio, totam dolor sapiente nesciunt similique vero.
+              Doloribus, explicabo ea?" | titlecase }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </p-accordionTab>
+  </p-accordion>
 </div>

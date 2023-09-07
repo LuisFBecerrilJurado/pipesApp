@@ -6,9 +6,9 @@ import { Component } from '@angular/core';
 
 })
 export class BasicsPageComponent {
-  public nameLower: string = 'luis';
-  public nameUpper: string = 'luis';
-  public fullName: string = 'LuIs FRancISco BEcErRIl JuRADo';
+  public lowerCase: string = '{{ value | lowercase }}';
+  public upperCase: string = '{{ value | uppercase }}';
+  public titleCase: string = '{{ value | titlecase }}';
 
 
 }
