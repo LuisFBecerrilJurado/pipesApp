@@ -9,6 +9,7 @@ import { PrimeNgModule } from '../prime-ng/prime-ng.module';
 import { DefaulPageComponent } from './pages/default-page/default-page.component';
 import { CustomPageComponent } from './pages/custom-page/custom-page.component';
 import { DatesPageComponent } from './pages/dates-page/dates-page.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { DatesPageComponent } from './pages/dates-page/dates-page.component';
     CommonModule,
     ProductsRoutingModule,
     PrimeNgModule,
+    SharedModule,
   ]
 })
 export class ProductsModule { }

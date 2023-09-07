@@ -7,35 +7,284 @@
     </p-card>
   </div>
   <p-tabView styleClass="tabview-custom">
-      <p-tabPanel>
-          <ng-template pTemplate="header">
-              <i class="pi pi-dollar px-1"></i>
-              <span>Currency</span>
-          </ng-template>
-          <p class="fadein animation-duration-1000 animation-iteration-1">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </p>
-      </p-tabPanel>
-      <p-tabPanel header="Header II">
-          <ng-template pTemplate="header">
-              <i class="fa-solid fa-0 px-1"></i>
-              <span>Decimal</span>
-          </ng-template>
-          <p class="fadein animation-duration-1000 animation-iteration-1">
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
-              ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Consectetur, adipisci velit, sed quia non numquam eius modi.
-          </p>
-      </p-tabPanel>
-      <p-tabPanel header="Header III">
-          <ng-template pTemplate="header">
-              <i class="pi pi-percentage px-1"></i>
-              <span>Percent</span>
-          </ng-template>
+    <p-tabPanel>
+        <ng-template pTemplate="header">
+            <i class="pi pi-dollar px-1"></i>
+            <span>Currency</span>
+        </ng-template>
+        <div class="fadein animation-duration-1000 animation-iteration-1">
           <p>
-              At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa
-              qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.
+            Transforma un número a un a cadena tipo divisa formateada de acuerdo a las reglas de configuración regional declarada o por defecto ingles.
           </p>
-      </p-tabPanel>
+          <p-divider>
+            <strong class="text-xl">Formato</strong>
+          </p-divider>
+          <p class="text-center">
+            {{formCurrency}}
+          </p>
+          <p-divider>
+            <strong class="text-xl">Parámetros</strong>
+          </p-divider>
+          <div class="grid">
+            <div class="col-12">
+              <p-table [value]="params" [columns]="columnas" [responsive]="true">
+                <ng-template pTemplate="header" let-columns>
+                  <tr>
+                    <th *ngFor="let col of columns">
+                      {{col.header}}
+                    </th>
+                  </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-param let-columns="columns">
+                  <tr>
+                    <td *ngFor="let col of columns" class="text-xs">
+                      {{param[col.field]}}
+                    </td>
+                  </tr>
+                </ng-template>
+              </p-table>
+            </div>
+          </div>
+          <p-divider>
+            <strong class="text-xl">Ejemplos</strong>
+          </p-divider>
+          <div class="grid text-center">
+            <div class="col-4">
+              <p-divider>
+                <strong class="text-base">Entrada</strong>
+              </p-divider>
+              <p>
+                {{in}}
+              </p>
+            </div>
+            <div class="col-4">
+              <p-divider>
+                <strong class="text-base">Pipe</strong>
+              </p-divider>
+              <p>
+                currency
+              </p>
+            </div>
+            <div class="col-4">
+              <p-divider>
+                <strong class="text-base">Salida</strong>
+              </p-divider>
+              <p>
+                {{in|currency}}
+              </p>
+            </div>
+            <div class="col-4">
+              <p-divider>
+                <strong class="text-base">Entrada</strong>
+              </p-divider>
+              <p>
+                {{in}}
+              </p>
+            </div>
+            <div class="col-4">
+              <p-divider>
+                <strong class="text-base">Pipe</strong>
+              </p-divider>
+              <p>
+                currency:'CAD'
+              </p>
+            </div>
+            <div class="col-4">
+              <p-divider>
+                <strong class="text-base">Salida</strong>
+              </p-divider>
+              <p>
+                {{in| currency:'CAD'}}
+              </p>
+            </div>
+          </div>
+        </div>
+    </p-tabPanel>
+    <p-tabPanel>
+      <ng-template pTemplate="header">
+          <i class="fa-solid fa-0 px-1"></i>
+          <span>Decimal</span>
+      </ng-template>
+      <div class="fadein animation-duration-1000 animation-iteration-1">
+        <p>
+          Formatea un valor según las opciones de dígitos y las reglas de configuración regional. La configuración regional determina el tamaño y el separador de grupos, el carácter de punto decimal y otras configuraciones específicas
+        </p>
+        <p-divider>
+          <strong class="text-xl">Formato</strong>
+        </p-divider>
+        <p class="text-center">
+          {{formDecimal}}
+        </p>
+        <p-divider>
+          <strong class="text-xl">Parámetros</strong>
+        </p-divider>
+        <div class="grid">
+          <div class="col-12">
+            <p-table [value]="params1" [columns]="columnas" [responsive]="true">
+              <ng-template pTemplate="header" let-columns>
+                <tr>
+                  <th *ngFor="let col of columns">
+                    {{col.header}}
+                  </th>
+                </tr>
+              </ng-template>
+              <ng-template pTemplate="body" let-param let-columns="columns">
+                <tr>
+                  <td *ngFor="let col of columns" class="text-xs">
+                    {{param[col.field]}}
+                  </td>
+                </tr>
+              </ng-template>
+            </p-table>
+          </div>
+        </div>
+        <p-divider>
+          <strong class="text-xl">Ejemplos</strong>
+        </p-divider>
+        <div class="grid text-center">
+          <div class="col-4">
+            <p-divider>
+              <strong class="text-base">Entrada</strong>
+            </p-divider>
+            <p>
+              {{pi}}
+            </p>
+          </div>
+          <div class="col-4">
+            <p-divider>
+              <strong class="text-base">Pipe</strong>
+            </p-divider>
+            <p>
+              number
+            </p>
+          </div>
+          <div class="col-4">
+            <p-divider>
+              <strong class="text-base">Salida</strong>
+            </p-divider>
+            <p>
+              {{pi|number}}
+            </p>
+          </div>
+          <div class="col-4">
+            <p-divider>
+              <strong class="text-base">Entrada</strong>
+            </p-divider>
+            <p>
+              {{pi}}
+            </p>
+          </div>
+          <div class="col-4">
+            <p-divider>
+              <strong class="text-base">Pipe</strong>
+            </p-divider>
+            <p>
+              number:'4.1-5'
+            </p>
+          </div>
+          <div class="col-4">
+            <p-divider>
+              <strong class="text-base">Salida</strong>
+            </p-divider>
+            <p>
+              {{pi | number:'4.1-5'}}
+            </p>
+          </div>
+        </div>
+      </div>
+    </p-tabPanel>
+    <p-tabPanel>
+      <ng-template pTemplate="header">
+          <i class="fa-solid fa-percent px-1"></i>
+          <span>Percent</span>
+      </ng-template>
+      <div class="fadein animation-duration-1000 animation-iteration-1">
+        <p>
+          Transforma un número en una cadena de porcentaje, formateada según las reglas locales que determinan el tamaño y el separador de grupos, el carácter de punto decimal y otras configuraciones específicas de la configuración local.
+        </p>
+        <p-divider>
+          <strong class="text-xl">Formato</strong>
+        </p-divider>
+        <p class="text-center">
+          {{formPercent}}
+        </p>
+        <p-divider>
+          <strong class="text-xl">Parámetros</strong>
+        </p-divider>
+        <div class="grid">
+          <div class="col-12">
+            <p-table [value]="params1" [columns]="columnas" [responsive]="true">
+              <ng-template pTemplate="header" let-columns>
+                <tr>
+                  <th *ngFor="let col of columns">
+                    {{col.header}}
+                  </th>
+                </tr>
+              </ng-template>
+              <ng-template pTemplate="body" let-param let-columns="columns">
+                <tr>
+                  <td *ngFor="let col of columns" class="text-xs">
+                    {{param[col.field]}}
+                  </td>
+                </tr>
+              </ng-template>
+            </p-table>
+          </div>
+        </div>
+        <p-divider>
+          <strong class="text-xl">Ejemplos</strong>
+        </p-divider>
+        <div class="grid text-center">
+          <div class="col-4">
+            <p-divider>
+              <strong class="text-base">Entrada</strong>
+            </p-divider>
+            <p>
+              {{in}}
+            </p>
+          </div>
+          <div class="col-4">
+            <p-divider>
+              <strong class="text-base">Pipe</strong>
+            </p-divider>
+            <p>
+              percent
+            </p>
+          </div>
+          <div class="col-4">
+            <p-divider>
+              <strong class="text-base">Salida</strong>
+            </p-divider>
+            <p>
+              {{pi| percent }}
+            </p>
+          </div>
+          <div class="col-4">
+            <p-divider>
+              <strong class="text-base">Entrada</strong>
+            </p-divider>
+            <p>
+              {{pi}}
+            </p>
+          </div>
+          <div class="col-4">
+            <p-divider>
+              <strong class="text-base">Pipe</strong>
+            </p-divider>
+            <p>
+              percent:'4.3-5'
+            </p>
+          </div>
+          <div class="col-4">
+            <p-divider>
+              <strong class="text-base">Salida</strong>
+            </p-divider>
+            <p>
+              {{in | percent:'4.3-5'}}
+            </p>
+          </div>
+        </div>
+      </div>
+    </p-tabPanel>
   </p-tabView>
 </div>
