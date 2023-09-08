@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { Observable, interval, tap } from 'rxjs';
 
 @Component({
   selector: 'app-uncommon-page',
   templateUrl: './uncommon-page.component.html',
-  styleUrls: ['./uncommon-page.component.css']
+  styleUrls: [],
 })
 export class UncommonPageComponent {
   public i18nSelectForm: string = '{{ value_expression | i18nSelect : mapping }}';
@@ -11,7 +12,7 @@ export class UncommonPageComponent {
   public sliceForm: string = '{{ value_expression | slice : start [ : end ] }}';
   public jsonForm: string = '{{ value_expression | json }}';
   public keyValueForm: string = '{{ input_expression | keyvalue [ : compareFn ] }}';
-  public AsyncForm: string = '';
+  public asyncForm: string = '{{ obj_expression | async }}';
 
 // ----- i18nSelect ----- \\
   public name: string = 'Francisco';
@@ -29,7 +30,7 @@ export class UncommonPageComponent {
 // ----- Fin i18nSelect ----- \\
 
 // ----- i18nPlural ----- \\
-  public clients: string[] = ['Maria', 'Juan', 'Luis', 'Alicia', 'Ricardo', 'Monserrath', 'Fernando', 'Ana', 'Ulises', 'Elizabeth'];
+  public clients: string[] = ['Maria', 'Juan', 'Luis', 'Alicia', 'Ricardo', 'Montserrath'];
 
   public clientsMap = {
     '=0' : 'no tenemos ningún cliente esperando.',
@@ -52,6 +53,15 @@ export class UncommonPageComponent {
 // ----- Fin KeyValue ----- \\
 
 // ----- Async ----- \\
-  
+  public myObservalbeTimer: Observable<number> = interval(2000).pipe(
+    tap(value => console.log('tap:', value))
+  );
+
+  public promiseValue: Promise<string> = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('Tenemos data en la promesa.')
+    }, 3500);
+  })
+
 // ----- Fin Async ----- \\
 }

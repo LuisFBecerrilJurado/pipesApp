@@ -45,14 +45,15 @@
         Ejemplo
       </strong>
     </p-divider>
-    <p>
-      Actualmente  {{ clients.length | i18nPlural:clientsMap }}
-    </p>
+      <p>
+        Actualmente  {{ clients.length | i18nPlural:clientsMap }}
+      </p>
     <p-button (click)="deleteClient()" label="Borrar Cliente"></p-button>
   </p-fieldset>
   <p-fieldset class="col-12 md:col-6" [toggleable]="true" legend="Slice Pipe">
     <p>
-      Crea un nuevo Array o String que contiene un subconjunto (slice) de los elementos declarando una posición inicial y una posición final.
+      Crea un nuevo Array o String que contiene un subconjunto (slice)
+      de los elementos declarando una posición inicial y una posición final.
     </p>
     <p-divider>
       <strong>
@@ -68,7 +69,9 @@
       </strong>
     </p-divider>
     <b>Original</b>
-    <pre>{{clients}}</pre>
+     <p>
+       {{clients}}
+     </p>
     <b>slice 0:2</b>
     <pre>{{clients | slice:0:2  }}</pre>
   </p-fieldset>
@@ -117,6 +120,29 @@
     </ul>
   </p-fieldset>
   <p-fieldset class="col-12 md:col-6" [toggleable]="true" legend="Async Pipe">
-
+    <p>
+      Suscribe a un Observable o Promise y devuelve el último valor que ha emitido. Cuando se emite un nuevo valor. <br>
+      Cuando el componente se destruye Async pipe se desuscribe automáticamente para evitar posibles fugas de memoria. Cuando la referencia de la expresión cambia, Async pipe se desuscribe automáticamente del Observable o Promise antiguo y se suscribe al nuevo.
+    </p>
+    <p-divider>
+      <strong>
+        Estructura
+      </strong>
+    </p-divider>
+    <p class="text-center">
+      {{asyncForm}}
+    </p>
+    <p-divider>
+      <strong>
+        Ejemplo
+      </strong>
+    </p-divider>
+    <pre>
+      <b>Observlable: {{ myObservalbeTimer | async }}</b>
+    </pre>
+    <pre>
+      <b>Promise:</b>
+      <b>{{promiseValue | async }}</b>
+    </pre>
   </p-fieldset>
 </div>
