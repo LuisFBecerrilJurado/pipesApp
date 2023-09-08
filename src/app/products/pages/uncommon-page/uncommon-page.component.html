@@ -1,1 +1,122 @@
-<p>uncommon-page works!</p>
+<div class="py-3">
+  <p-card header="Dates Pipes" class="text-center">
+    <p class="text-justify text-xl">
+      Pipes incluidos en Angular por default que nos sirven para tareas muy especificas.
+    </p>
+  </p-card>
+</div>
+
+<div class="grid text-justify">
+  <p-fieldset class="col-12 md:col-6" [toggleable]="true" legend="i18nSelect Pipe">
+    <p>Selector genérico que muestra la cadena que coincide con el valor actual. Necesita un map para verificar coincidencias y retornar el valor de cambio o un valor por defecto en caso de no haber coincidencias.
+    </p>
+    <p-divider>
+      <strong>
+        Estructura
+      </strong>
+    </p-divider>
+    <p class="text-center">
+      {{i18nSelectForm}}
+    </p>
+    <p-divider>
+      <strong>
+        Ejemplo
+      </strong>
+    </p-divider>
+    <p>
+      Hola buen día, {{name}} es un placer {{gender | i18nSelect:invitationMap}} a nuestro evento.
+    </p>
+    <p-button (click)="changeClient()" label="Cambiar persona"></p-button>
+  </p-fieldset>
+  <p-fieldset class="col-12 md:col-6" [toggleable]="true" legend="i18nPlural Pipe">
+    <p>
+      Selector genérico que mapea un valor y pluraliza el valor resultante de acuerdo a las reglas locales.
+    </p>
+    <p-divider>
+      <strong>
+        Estructura
+      </strong>
+    </p-divider>
+    <p class="text-center">
+      {{i18nPluralForm}}
+    </p>
+    <p-divider>
+      <strong>
+        Ejemplo
+      </strong>
+    </p-divider>
+    <p>
+      Actualmente  {{ clients.length | i18nPlural:clientsMap }}
+    </p>
+    <p-button (click)="deleteClient()" label="Borrar Cliente"></p-button>
+  </p-fieldset>
+  <p-fieldset class="col-12 md:col-6" [toggleable]="true" legend="Slice Pipe">
+    <p>
+      Crea un nuevo Array o String que contiene un subconjunto (slice) de los elementos declarando una posición inicial y una posición final.
+    </p>
+    <p-divider>
+      <strong>
+        Estructura
+      </strong>
+    </p-divider>
+    <p class="text-center">
+      {{sliceForm}}
+    </p>
+    <p-divider>
+      <strong>
+        Ejemplo
+      </strong>
+    </p-divider>
+    <b>Original</b>
+    <pre>{{clients}}</pre>
+    <b>slice 0:2</b>
+    <pre>{{clients | slice:0:2  }}</pre>
+  </p-fieldset>
+  <p-fieldset class="col-12 md:col-6" [toggleable]="true" legend="JSON Pipe">
+    <p>
+      Convierte un valor en su representación en formato JSON. Útil para la depuración.
+    </p>
+    <p-divider>
+      <strong>
+        Estructura
+      </strong>
+    </p-divider>
+    <p class="text-center">
+      {{jsonForm}}
+    </p>
+    <p-divider>
+      <strong>
+        Ejemplo
+      </strong>
+    </p-divider>
+    <p>
+      {{ person | json }}
+    </p>
+  </p-fieldset>
+  <p-fieldset class="col-12 md:col-6" [toggleable]="true" legend="KeyValue Pipe">
+    <p>
+      Transforma un objeto o mapa en una matriz de pares clave-valor (key-value)
+    </p>
+    <p-divider>
+      <strong>
+        Estructura
+      </strong>
+    </p-divider>
+    <p class="text-center">
+      {{keyValueForm}}
+    </p>
+    <p-divider>
+      <strong>
+        Ejemplo
+      </strong>
+    </p-divider>
+    <ul>
+      <li *ngFor="let item of person | keyvalue ">
+        <b>{{ item.key | titlecase }}:</b> {{item.value}}
+      </li>
+    </ul>
+  </p-fieldset>
+  <p-fieldset class="col-12 md:col-6" [toggleable]="true" legend="Async Pipe">
+
+  </p-fieldset>
+</div>
