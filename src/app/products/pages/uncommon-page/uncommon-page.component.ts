@@ -62,6 +62,5 @@ export class UncommonPageComponent {
       resolve('Tenemos data en la promesa.')
     }, 3500);
   })
-
 // ----- Fin Async ----- \\
 }

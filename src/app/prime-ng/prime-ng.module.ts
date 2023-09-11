@@ -11,6 +11,7 @@ import { DividerModule } from 'primeng/divider';
 import { TableModule } from 'primeng/table';
 import { AccordionModule } from 'primeng/accordion';
 import { TabViewModule } from 'primeng/tabview';
+import { ToolbarModule } from 'primeng/toolbar';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { TabViewModule } from 'primeng/tabview';
     TableModule,
     AccordionModule,
     TabViewModule,
+    ToolbarModule,
   ]
 })
 export class PrimeNgModule { }

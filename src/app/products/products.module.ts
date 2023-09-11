@@ -12,6 +12,8 @@ import { DatesPageComponent } from './pages/dates-page/dates-page.component';
 import { SharedModule } from '../shared/shared.module';
 
 
+import { ToggleCasePipe } from './pipes/toggle-case.pipe';
+
 @NgModule({
   declarations: [
     BasicsPageComponent,
@@ -20,6 +22,7 @@ import { SharedModule } from '../shared/shared.module';
     DefaulPageComponent,
     CustomPageComponent,
     DatesPageComponent,
+    ToggleCasePipe,
   ],
   imports: [
     CommonModule,

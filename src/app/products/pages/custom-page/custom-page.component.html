@@ -1,1 +1,40 @@
-<p>custom-page works!</p>
+<p-panel header="Pipes Personalizados" class="p-1">
+  <p class="text-justify">
+    Pipes Personalizados que nos ayudan a cumplir ciertas tareas especificas dentro de nuestra app
+  </p>
+</p-panel>
+
+<div class="grid">
+  <p-fieldset [toggleable]="true" legend="Custom Pipes" class="col-12">
+    <p-card>
+      <p-divider>
+        <strong class="text-xl">ToogleCase</strong>
+      </p-divider>
+      <p class="text-justify">
+        Pipe que nos ayuda a transformar de {{'MINÚSCULAS'| toggleCase:isUpperCase}} a {{'MAYÚSCULAS' | toggleCase:isUpperCase}} y viceversa
+      </p>
+      <p-divider>
+        <strong class="text-xl">Formato</strong>
+      </p-divider>
+      <p class="text-center">
+        {{toggleForm}}
+      </p>
+    </p-card>
+    <p-toolbar>
+      <div class="p-toolbar-group-start">
+        <p-button
+          label="ToogleCase"
+          icon="pi pi-sync"
+          styleClass="p-button-text p-button-warning mr-2"
+          (click)="toggleUpperCase()">
+        </p-button>
+      </div>
+      <div class="p-toolbar-group-end">
+        <p-button [label]="labelOrder" [icon]="iconOrder" (click)="changeIconOrder()" styleClass="p-button-text p-button-success mr-2"></p-button>
+        <p-button [label]="labelFly" [icon]="iconFly" (click)="changeIcon()" styleClass="p-button-text p-button-danger mr-2"></p-button>
+        <p-button label="ByColor" icon="pi pi-sort" styleClass="p-button-text p-button-help"></p-button>
+      </div>
+    </p-toolbar>
+
+  </p-fieldset>
+</div>

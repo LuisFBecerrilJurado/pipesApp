@@ -43,7 +43,7 @@ export class MenuComponent implements OnInit {
         icon: 'fa-solid fa-pencil',
         items: [
           {
-            label: 'JSON',
+            label: 'Custom',
             icon: 'pi pi-cog',
             routerLink: 'custom'
           }

@@ -6,7 +6,7 @@ interface Opciones{
   result: string;
 }
 @Component({
-  selector: 'app-dates-page',
+  selector: 'products-dates-page',
   templateUrl: './dates-page.component.html',
   styles: [
   ]
