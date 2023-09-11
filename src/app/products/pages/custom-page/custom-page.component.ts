@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Color, Hero } from '../../interfaces/hero.interface';
 
 @Component({
   selector: 'products-custom-page',
@@ -7,38 +8,45 @@ import { Component } from '@angular/core';
 export class CustomPageComponent {
   public toggleForm: string = '{{MINÚSCULAS| toggleCase}} {{mayúsculas | toggleCase:true}}';
   public isUpperCase: boolean = false;
-  public iconFly: string = 'pi pi-check'
-  public iconOrder: string = 'pi pi-sort-alpha-down';
-  public labelFly: string = 'Can Fly';
-  public labelOrder: string = 'By Name (A-Z)';
-  public countFly: number = 0;
-  public countOrder: number = 0;
 
-  toggleUpperCase():void {
+  public orderBy: keyof Hero | undefined | '' = 'canFly';
+
+  public heroes: Hero[] = [
+    {
+      name: 'Superman',
+      canFly: true,
+      color: Color.blue,
+    },
+    {
+      name: 'Batman',
+      canFly: false,
+      color: Color.black,
+    },
+    {
+      name: 'Green Lantern',
+      canFly: true,
+      color: Color.green,
+    },
+    {
+      name: 'Flash',
+      canFly: false,
+      color: Color.red,
+    },
+    {
+      name: 'Wonder Woman',
+      canFly: true,
+      color: Color.yellow,
+    },
+  ]
+  toggleUpperCase(): void {
     this.isUpperCase = !this.isUpperCase;
   }
 
-  changeIcon(): void{
-    this.countFly += 1;
-
-    if (this.countFly % 2 === 0) {
-      this.iconFly = 'pi pi-check';
-      this.labelFly = 'Can Fly';
-    } else {
-      this.iconFly = 'pi pi-times';
-      this.labelFly = 'Can´t Fly';
-    }
-
+  getColorName(value: Color): string {
+    return Color[value];
   }
-  changeIconOrder(): void {
-    this.countOrder += 1;
 
-    if (this.countOrder % 2 === 0) {
-      this.iconOrder = 'pi pi-sort-alpha-down';
-      this.labelOrder = 'By Name (A-Z)';
-    } else {
-      this.iconOrder = 'pi pi-sort-alpha-down-alt';
-      this.labelOrder = 'By Name (Z-A)';
-    }
+  changeOrder(value : keyof Hero) {
+    this.orderBy = value;
   }
 }

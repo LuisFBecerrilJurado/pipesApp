@@ -13,6 +13,8 @@ import { SharedModule } from '../shared/shared.module';
 
 
 import { ToggleCasePipe } from './pipes/toggle-case.pipe';
+import { CanFlyPipe } from './pipes/can-fly.pipe';
+import { SortByPipe } from './pipes/sort-by.pipe';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { ToggleCasePipe } from './pipes/toggle-case.pipe';
     CustomPageComponent,
     DatesPageComponent,
     ToggleCasePipe,
+    CanFlyPipe,
+    SortByPipe,
   ],
   imports: [
     CommonModule,
